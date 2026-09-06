@@ -1,6 +1,6 @@
 # FedEx Senior Product Analyst Interview Speaking Guide
 
-This guide contains the six main stories developed during interview preparation. Use the full answers as reference material, not as scripts to memorize. Before the interview, confirm every number, metric definition, date, and outcome. If you cannot explain how a figure was calculated, leave it out.
+This guide contains the seven main stories developed during interview preparation. Use the full answers as reference material, not as scripts to memorize. Before the interview, confirm every number, metric definition, date, and outcome. If you cannot explain how a figure was calculated, leave it out.
 
 ## Contents
 
@@ -11,7 +11,8 @@ This guide contains the six main stories developed during interview preparation.
 5. [Agile backlog refinement and stakeholder collaboration](#5-agile-backlog-refinement-and-stakeholder-collaboration)
 6. [Spot Demand metric localization](#6-spot-demand-metric-localization)
 7. [Supporting example using AI responsibly](#7-supporting-example-using-ai-responsibly)
-8. [Quick story selection guide](#8-quick-story-selection-guide)
+8. [Weekly report miss and Python automation](#8-weekly-report-miss-and-python-automation)
+9. [Quick story selection guide](#9-quick-story-selection-guide)
 
 ## 1 Pricing pilot and regional rollout
 
@@ -429,7 +430,70 @@ I independently checked the join logic, row counts, duplicates, null handling, d
 
 I used only an approved tool for company work and did not enter confidential customer or company information into an unapproved service. The tool helped me work faster, but the validation, interpretation, and final recommendation remained my responsibility.
 
-## 8 Quick story selection guide
+## 8 Weekly report miss and Python automation
+
+### What questions this answers
+
+- Tell me about a time you made a mistake and how you rectified it.
+- Tell me about a time you missed a commitment.
+- Describe a process you automated or improved.
+- Tell me about a time you took ownership of a problem.
+- How do you make sure a mistake does not happen again?
+- Give an example of using Python to improve an operational process.
+
+### Scenario brief
+
+You were responsible for manually updating and saving a weekly performance report. One week, you became occupied in a meeting and missed the scheduled update. You corrected the report as soon as you noticed the miss, accepted responsibility, and then automated the repetitive process in Python so it no longer depended entirely on memory and manual preparation.
+
+**Tagline:** I owned the missed update and replaced a fragile manual process with a more reliable automated one.
+
+### Points I must say
+
+- The weekly report was my responsibility, and I missed the scheduled update.
+- The meeting explains what happened, but it is not an excuse.
+- I should have planned for the conflict or put a reminder or backup control in place.
+- I corrected the missed update as soon as I noticed it.
+- I recognized that the manual process was vulnerable to both missed deadlines and inconsistent steps.
+- I built a Python script that pulled the required data, generated the report, and saved it in the correct target location.
+- I validated the automated output against previous manually prepared reports.
+- The new process still included a quick review before the report was considered complete.
+- The automation saved approximately 30 minutes each week.
+- My lesson was to build controls around recurring responsibilities instead of relying only on memory.
+
+### Full reference answer in STAR format
+
+**Situation:** At Amazon, I was responsible for updating and publishing a weekly performance report. The process was manual: I refreshed the information, prepared the report, and saved the final file in a shared target location by a specific time each week. One week, I became involved in a meeting and missed the scheduled update.
+
+**Task:** The report was still my responsibility, so I needed to correct the missed update immediately. I also wanted to address the underlying weakness in the process so that the same issue would be less likely to happen again.
+
+**Action:** As soon as I noticed the report had not been updated, I completed the refresh and delivered the file. I took responsibility for the miss rather than using the meeting as an excuse. I recognized that I should have planned for the scheduling conflict or used a reminder and backup control.
+
+I then reviewed the reporting steps and saw that the process depended on one person remembering and completing the same repetitive actions every week. I developed a Python script that pulled the required data, generated the updated report, applied the required file name, and saved it in the correct target location.
+
+Before using the script as the regular process, I compared its output with previous manually prepared reports. I checked the data period, calculations, record counts, and file location. I also retained a quick review step after running the script so that automation did not replace accountability.
+
+**Result:** The automated process reduced the weekly reporting effort by approximately 30 minutes and removed most of the repetitive manual preparation. After the change, the process required only starting the script and reviewing the output. It also reduced the risk of future missed or inconsistent reports.
+
+The experience taught me that recurring business processes should not depend entirely on one person's memory. Since then, I use reminders, clear backup ownership where appropriate, and automation for repetitive reporting work.
+
+### Short memory sequence
+
+> Missed weekly update -> owned it -> corrected it -> identified manual-process risk -> automated with Python -> saved 30 minutes per week
+
+### Details to prepare for follow-up questions
+
+- What the report measured and who used it
+- When and how you realized the update had been missed
+- Whether the delay affected a meeting or business decision
+- How you communicated the missed update
+- Data source used by the Python script
+- Validation checks built into the process
+- How errors or missing data were handled
+- Whether the script was scheduled or still required a manual start
+- Where the report was saved and how access was controlled
+- How the 30-minute saving was estimated
+
+## 9 Quick story selection guide
 
 | If the interviewer asks about | Use this story | Main proof point |
 |---|---|---|
@@ -444,6 +508,7 @@ I used only an approved tool for company work and did not enter confidential cus
 | Metric definition or governance | Spot Demand metrics | Adapted network measures for Relay while preserving consistency |
 | Data Engineering partnership | Spot Demand metrics | Converted business needs into specific data requirements |
 | Responsible use of AI | AI supporting example | Used AI for speed and independently validated the work |
+| Mistake, accountability, or process improvement | Weekly report automation | Owned a missed update and automated the recurring process |
 
 ## Final preparation checklist
 

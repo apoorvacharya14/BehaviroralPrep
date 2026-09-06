@@ -10,6 +10,7 @@
 - [Migration of dashboards from Tableau to Quicksight: Challenging task/Hard time/conflict/collaboration](#migration-of-dashboards-from-tableau-to-quicksight-challenging-task-hard-time-conflict-collaboration)
 - [Pricing change pilot across US&Canada: Vague or ambiguous requirements](#pricing-change-pilot-across-us-and-canada-vague-or-ambiguous-requirements)
 - [Peak season few domiciles(region) not performing: End to end solution/deliver results under pressure/ownership](#peak-season-few-domiciles-region-not-performing-end-to-end-solution-deliver-results-under-pressure-ownership)
+- [Weekly report missed update: Mistake/Ownership/Automation](#weekly-report-missed-update-mistake-ownership-automation)
 
 <a id="sdo-project-ambiguity-corss-functional-collaboration-deep-dive-problem-solving-ownership"></a>
 
@@ -312,3 +313,40 @@ My goal was to build an analytical framework from scratch. I needed to ingest ra
 - **Emphasize the "Why":** Highlight that carriers weren't rejecting loads out of disinterest, but because the algorithm was surfacing cross-country runs instead of local backhauls.
 
 - **Frame as a Scalable Asset:** Point out that you didn't just fix a single peak-season issue—you built an automated telemetry pipeline that now monitors regional funnel health continuously.
+
+<a id="weekly-report-missed-update-mistake-ownership-automation"></a>
+
+## Weekly report missed update: Mistake/Ownership/Automation
+
+### Situation
+
+At Amazon, I was responsible for manually updating and publishing a weekly performance report. The process required refreshing the data, preparing the report, and saving the final file in a shared target location by a set time. One week, I became occupied in a meeting and missed the scheduled update.
+
+### Task
+
+The report was my responsibility, so I needed to correct the missed update immediately and take ownership of the mistake. I also wanted to prevent a similar miss by addressing the process's dependence on manual steps and memory.
+
+### Action
+
+- **Corrected the Immediate Miss:** As soon as I realized the report had not been updated, I completed the refresh and delivered the file. I accepted responsibility and did not use the meeting as an excuse.
+
+- **Identified the Process Risk:** I reviewed the workflow and recognized that a recurring report should not depend entirely on one person remembering and completing several repetitive steps every week.
+
+- **Automated the Report:** I developed a Python script that pulled the required data, generated the updated report, applied the correct file name, and saved it in the target location.
+
+- **Validated and Controlled the Process:** I compared the automated output with previous manually prepared reports and checked the reporting period, calculations, record counts, and target location. I retained a final review step after each run.
+
+### Result
+
+- **Time Savings:** Reduced the weekly reporting effort by approximately 30 minutes.
+
+- **Improved Reliability:** Removed most manual preparation and reduced the risk of future missed or inconsistent updates.
+
+- **Process Improvement:** Changed the weekly workflow to a simple run-and-review process while keeping the analyst responsible for validating the result.
+
+### Key Interview Talking Points
+
+- State the mistake directly and take responsibility before discussing the automation.
+- Explain that the meeting was context, not an excuse.
+- Show both the immediate correction and the long-term preventive action.
+- End with the lesson: recurring processes need reminders, controls, backup ownership, or automation rather than relying only on memory.

@@ -10,6 +10,7 @@
 6. [Qualitative Discovery and Reconciliation Platform Migration](#6-qualitative-discovery-and-reconciliation-platform-migration)
 7. [Tableau-to-QuickSight Data Compression and Optimization](#7-tableau-to-quicksight-data-compression-and-optimization)
 8. [Pricing Pilot Experimentation and Ambiguity](#8-pricing-pilot-experimentation-and-ambiguity)
+9. [Weekly Report Miss and Python Automation](#9-weekly-report-miss-and-python-automation)
 
 ## 1 Clickstream Telemetry and Load-Board Funnel Optimization
 
@@ -172,3 +173,26 @@
 **Action:** Established booking conversion as the primary KPI alongside guardrail metrics such as cancellations and service levels; used SQL to segment the data by country and carrier tier instead of relying on blended averages.
 
 **Result:** Revealed that booking conversion in the United States increased by four percentage points, from 95% to 99%, while performance in Canada remained flat; prevented a flawed regional rollout; established the standard Relay pilot-evaluation playbook.
+
+## 9 Weekly Report Miss and Python Automation
+
+**Company and context:** Amazon
+
+**Leadership principles:** Ownership, Invent and Simplify
+
+### Best behavioral questions answered
+
+- Tell me about a time you made a mistake and how you corrected it.
+- Describe a process you automated or improved.
+- Tell me about a time you took ownership of a missed commitment.
+- How do you prevent a problem from happening again?
+
+### STAR framework
+
+**Situation:** I was responsible for manually updating and saving a weekly performance report. One week, I became occupied in a meeting and missed the scheduled update.
+
+**Task:** Correct the missed report immediately, take responsibility, and prevent the recurring process from depending only on my memory.
+
+**Action:** Completed the missed update as soon as I noticed it, then built a Python script that pulled the required data, generated the report, and saved it in the target location. Validated the automated output against previous manually prepared reports and added a reminder and final review step.
+
+**Result:** Reduced the weekly reporting effort by approximately 30 minutes, removed the repetitive manual preparation, and reduced the risk of future missed or inconsistent updates. The process then required only starting the script and reviewing the output.
