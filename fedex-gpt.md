@@ -1,6 +1,6 @@
 # FedEx Senior Product Analyst Interview Speaking Guide
 
-This guide contains the seven main stories developed during interview preparation. Use the full answers as reference material, not as scripts to memorize. Before the interview, confirm every number, metric definition, date, and outcome. If you cannot explain how a figure was calculated, leave it out.
+This guide contains the eight main stories developed during interview preparation. Use the full answers as reference material, not as scripts to memorize. Before the interview, confirm every number, metric definition, date, and outcome. If you cannot explain how a figure was calculated, leave it out.
 
 ## Contents
 
@@ -11,8 +11,9 @@ This guide contains the seven main stories developed during interview preparatio
 5. [Agile backlog refinement and stakeholder collaboration](#5-agile-backlog-refinement-and-stakeholder-collaboration)
 6. [Spot Demand metric localization](#6-spot-demand-metric-localization)
 7. [Supporting example using AI responsibly](#7-supporting-example-using-ai-responsibly)
-8. [Weekly report miss and Python automation](#8-weekly-report-miss-and-python-automation)
-9. [Quick story selection guide](#9-quick-story-selection-guide)
+8. [Regional domicile conversion analysis using multiple data sources](#8-regional-domicile-conversion-analysis-using-multiple-data-sources)
+9. [Weekly report miss and Python automation](#9-weekly-report-miss-and-python-automation)
+10. [Quick story selection guide](#10-quick-story-selection-guide)
 
 ## 1 Pricing pilot and regional rollout
 
@@ -430,7 +431,75 @@ I independently checked the join logic, row counts, duplicates, null handling, d
 
 I used only an approved tool for company work and did not enter confidential customer or company information into an unapproved service. The tool helped me work faster, but the validation, interpretation, and final recommendation remained my responsibility.
 
-## 8 Weekly report miss and Python automation
+## 8 Regional domicile conversion analysis using multiple data sources
+
+### What questions this answers
+
+- Tell me about a time you used multiple data sources.
+- Describe an analysis you developed from beginning to end.
+- Tell me about a time you identified the cause of low conversion.
+- How have you used data to influence a product decision?
+- Tell me about a time you worked under pressure during peak season.
+- How do you combine behavioral and transactional data?
+
+### Scenario brief
+
+During peak season, booking conversion was low in several carrier domiciles, or geographic regions. No single dataset explained the problem. You combined carrier activity, recommendation, load, carrier-profile, and booking data to follow the journey from recommendation exposure to booking. The analysis showed that carriers were interested in finding loads, but many recommendations did not fit their geographic operating patterns. The Product team used the findings to redefine recommendation criteria for the affected domiciles.
+
+**Tagline:** I combined behavioral and transactional data to show that low conversion was caused by recommendation relevance, not a lack of carrier interest.
+
+### Points I must say
+
+- The problem occurred during peak season, when low conversion created additional operational and cost risk.
+- The analysis focused on a few underperforming carrier domiciles rather than the entire network.
+- No individual source showed the complete customer journey.
+- Clickstream or activity data showed searches, load views, clicks, and booking attempts.
+- Recommendation and load data showed which loads were presented and their relevant attributes.
+- Carrier-profile data identified the carrier's domicile or operating region.
+- Booking data showed which recommendations resulted in bookings.
+- I connected the sources using appropriate identifiers such as carrier ID, load ID, recommendation ID, and date.
+- I built a funnel and compared the affected domiciles with better-performing regions.
+- The evidence showed high interest but low recommendation relevance in the affected regions.
+- The Product team used the analysis to redefine the regional recommendation criteria.
+- I monitored conversion after the change to determine whether the improvement was sustained.
+
+### Full reference answer in STAR format
+
+**Situation:** During peak season at Amazon Relay, I observed that booking conversion was noticeably lower in a few carrier domiciles, or geographic regions. This was important because unbooked loads could require more expensive alternatives to secure transportation capacity during an already high-pressure period.
+
+**Task:** I was responsible for identifying why conversion was lower in those domiciles and providing the Product team with evidence they could use to improve the recommendation experience.
+
+**Action:** No single dataset explained the complete problem, so I combined several sources using SQL. I used carrier activity and clickstream data to understand searches, load views, recommendation clicks, and booking attempts. I joined that with recommendation and load data, including the loads presented to each carrier and relevant attributes such as origin, destination, route distance, equipment type, and pickup time.
+
+I then connected carrier-profile and domicile information to determine whether the recommended loads aligned with each carrier's operating region. Finally, I used booking transaction data to identify which recommendations led to bookings.
+
+I connected the datasets through the appropriate carrier, load, and recommendation identifiers and aligned their timestamps. I also checked for duplicate events, missing identifiers, and consistent date filters before calculating the results.
+
+Using the combined data, I created a funnel from recommendation exposure to load view and booking. I compared the underperforming domiciles with regions that had healthier conversion. The analysis showed that carriers in the affected areas were actively searching and viewing loads, but many recommendations did not match their geographic operating patterns. This demonstrated that the issue was recommendation relevance rather than a lack of carrier demand.
+
+I presented the funnel, regional comparison, and supporting numbers to the Product team. Based on the findings, I recommended adjusting the recommendation criteria for those specific domiciles.
+
+**Result:** The Product team used the analysis to redefine the recommendation criteria for the affected regions. The revised approach produced more relevant recommendations and helped improve booking conversion in those domiciles. I continued monitoring conversion and downstream operational measures after the change to confirm that the improvement was sustained.
+
+### Short memory sequence
+
+> Low conversion in a few domiciles -> combine activity, recommendation, carrier, load, and booking data -> build funnel -> identify relevance problem -> Product changes recommendation criteria
+
+### Details to prepare for follow-up questions
+
+- Exact domiciles or number of regions included
+- Data sources actually used and what each source contributed
+- Join keys and how unmatched records were handled
+- Funnel stages and conversion definition
+- Date range and peak-season comparison period
+- Example of an irrelevant recommendation
+- How the affected regions differed from healthier regions
+- Data-quality checks performed before presenting the results
+- Exact recommendation criterion that Product changed
+- Conversion before and after the change, if verified
+- Guardrail measures monitored after implementation
+
+## 9 Weekly report miss and Python automation
 
 ### What questions this answers
 
@@ -493,7 +562,7 @@ The experience taught me that recurring business processes should not depend ent
 - Where the report was saved and how access was controlled
 - How the 30-minute saving was estimated
 
-## 9 Quick story selection guide
+## 10 Quick story selection guide
 
 | If the interviewer asks about | Use this story | Main proof point |
 |---|---|---|
@@ -508,6 +577,7 @@ The experience taught me that recurring business processes should not depend ent
 | Metric definition or governance | Spot Demand metrics | Adapted network measures for Relay while preserving consistency |
 | Data Engineering partnership | Spot Demand metrics | Converted business needs into specific data requirements |
 | Responsible use of AI | AI supporting example | Used AI for speed and independently validated the work |
+| Multiple data sources or low conversion | Domicile conversion analysis | Combined behavioral and transactional data to improve recommendation criteria |
 | Mistake, accountability, or process improvement | Weekly report automation | Owned a missed update and automated the recurring process |
 
 ## Final preparation checklist
