@@ -1,6 +1,6 @@
 # FedEx Senior Product Analyst Interview Speaking Guide
 
-This guide contains the eight main stories developed during interview preparation. Use the full answers as reference material, not as scripts to memorize. Before the interview, confirm every number, metric definition, date, and outcome. If you cannot explain how a figure was calculated, leave it out.
+This guide contains the nine main stories developed during interview preparation. Use the full answers as reference material, not as scripts to memorize. Before the interview, confirm every number, metric definition, date, and outcome. If you cannot explain how a figure was calculated, leave it out.
 
 ## Contents
 
@@ -13,7 +13,8 @@ This guide contains the eight main stories developed during interview preparatio
 7. [Supporting example using AI responsibly](#7-supporting-example-using-ai-responsibly)
 8. [Regional domicile conversion analysis using multiple data sources](#8-regional-domicile-conversion-analysis-using-multiple-data-sources)
 9. [Weekly report miss and Python automation](#9-weekly-report-miss-and-python-automation)
-10. [Quick story selection guide](#10-quick-story-selection-guide)
+10. [VRID lifecycle tracking initiative](#10-vrid-lifecycle-tracking-initiative)
+11. [Quick story selection guide](#11-quick-story-selection-guide)
 
 ## 1 Pricing pilot and regional rollout
 
@@ -562,7 +563,87 @@ The experience taught me that recurring business processes should not depend ent
 - Where the report was saved and how access was controlled
 - How the 30-minute saving was estimated
 
-## 10 Quick story selection guide
+## 10 VRID lifecycle tracking initiative
+
+### What questions this answers
+
+- Tell me about a time you took your own initiative.
+- Describe an analysis that had a measurable operational impact.
+- Tell me about a problem you identified before being asked to solve it.
+- Describe an analytical solution you developed from beginning to end.
+- Tell me about a time you combined data from multiple systems.
+- How have you improved operational efficiency or troubleshooting?
+- Tell me about a dashboard or analytical product that achieved strong adoption.
+
+### Scenario brief
+
+Amazon Relay loads received a Vehicle Run ID, or VRID, that moved through several downstream transportation and fulfillment systems. Existing operational reporting focused mainly on Load IDs, leaving teams without one place to follow the complete VRID journey. You recognized the recurring troubleshooting problem, mapped the lifecycle across APIs and relational databases, and created a unified tracking framework and dashboard using VRID as the primary identifier.
+
+**Tagline:** I recognized an unassigned visibility problem, connected fragmented VRID data, and reduced operational investigation time from 45 minutes to approximately three minutes.
+
+### Points I must say
+
+- A booked Relay load received a VRID that appeared across several downstream systems.
+- Existing reporting was centered on Load IDs and did not show the complete VRID lifecycle.
+- Operations had to search multiple systems and compare identifiers and timestamps manually.
+- A typical root-cause investigation could take approximately 45 minutes.
+- This was not initially assigned to me as a formal dashboard request.
+- I recognized the repeated problem through my interactions with Operations and investigated it proactively.
+- I mapped where the VRID was created, how it appeared in each system, and which status updates were expected.
+- I audited API and relational-database sources and identified the fields and keys needed to connect them.
+- I used VRID as the primary tracking identifier while retaining Load ID for business context.
+- I addressed duplicate events, missing identifiers, inconsistent timestamps, and status differences.
+- I validated sample VRID journeys with Operations and technical stakeholders.
+- The solution provided visibility across 100% of the in-scope VRID lifecycle stages.
+- Root-cause analysis time decreased from approximately 45 minutes to three minutes.
+- Daily active adoption reached approximately 85% among the targeted Operations leads.
+
+### Full reference answer in STAR format
+
+**Situation:** At Amazon Relay, once a load was booked, it received a Vehicle Run ID, or VRID, that moved through several downstream transportation and fulfillment systems. However, most of our operational reporting was organized around the Load ID.
+
+This created a visibility gap. If a vehicle run was delayed, missing a status, or displaying inconsistent information, Operations could not follow its complete journey in one place. Team members had to search across several systems, compare different identifiers and timestamps, and sometimes contact multiple technical teams. Root-cause analysis for a single issue could take approximately 45 minutes.
+
+**Task:** This was not initially assigned to me as a formal dashboard request. I noticed the recurring troubleshooting problem through my interactions with Operations and decided to investigate whether analytics could provide a more complete view.
+
+My objective was to design an analytical solution that connected the different data sources and allowed users to track the full lifecycle of an individual VRID. I first needed to determine whether the required data was available and whether VRID could be used reliably as the common tracking identifier.
+
+**Action:** I began by speaking with Operations and technical stakeholders to understand how they investigated a delayed or missing vehicle run. I asked them to walk me through the systems they checked, the identifiers they used, the common failure points, and the time required to investigate a typical case.
+
+I then mapped the VRID lifecycle across the in-scope systems. I documented where the VRID was created, how it appeared in each downstream database or API, which status updates were expected at each stage, and where the connection between systems could be lost.
+
+Next, I audited the available sources. These included relational databases containing load and execution information and APIs containing downstream status updates. I reviewed the data grain, timestamps, status definitions, and available join keys for each source.
+
+I designed a unified tracking model that used VRID as the primary identifier while retaining Load ID for business context. I created logic to connect the records across systems and accounted for duplicate events, missing identifiers, inconsistent timestamps, and differences in status terminology.
+
+I then built a dashboard that allowed an Operations user to enter a VRID and see its lifecycle, current status, latest update, and the stage at which a delay or data handoff problem had occurred. Before releasing it broadly, I tested sample VRID journeys against the source systems and reviewed the results with Operations and technical stakeholders. Their feedback helped me refine the status labels and dashboard layout so the information matched the way they investigated incidents.
+
+**Result:** The solution provided visibility across 100% of the in-scope VRID lifecycle stages. It reduced the average root-cause analysis time from approximately 45 minutes to three minutes, which was a reduction of more than 90%.
+
+It also achieved approximately 85% daily active adoption among the targeted Operations leads. Beyond resolving individual cases faster, the combined view helped teams identify repeated handoff and status-update problems between systems.
+
+The most important part of this example was that I did not simply respond to an assigned reporting request. I recognized a recurring operational problem, confirmed its impact, proposed a solution, and carried the analysis through design, validation, and adoption.
+
+### Short memory sequence
+
+> Load-ID reporting gap -> recognize repeated Operations pain -> map VRID across systems -> build unified tracking model -> validate with users -> 45 minutes to 3 minutes -> 85% adoption
+
+### Details to prepare for follow-up questions
+
+- How you first noticed the recurring problem
+- Number and types of systems included
+- Difference between Load ID and VRID
+- Data sources and join keys used
+- How missing or duplicate VRIDs and conflicting statuses were handled
+- Exact lifecycle stages displayed
+- How the 45-minute baseline and three-minute result were measured
+- What 100% lifecycle visibility meant and what was in scope
+- How daily active adoption was calculated
+- One repeated system handoff problem discovered through the dashboard
+- How access, refresh frequency, and data quality were managed
+- What you would improve if you rebuilt the solution today
+
+## 11 Quick story selection guide
 
 | If the interviewer asks about | Use this story | Main proof point |
 |---|---|---|
@@ -579,6 +660,7 @@ The experience taught me that recurring business processes should not depend ent
 | Responsible use of AI | AI supporting example | Used AI for speed and independently validated the work |
 | Multiple data sources or low conversion | Domicile conversion analysis | Combined behavioral and transactional data to improve recommendation criteria |
 | Mistake, accountability, or process improvement | Weekly report automation | Owned a missed update and automated the recurring process |
+| Own initiative or measurable analysis impact | VRID lifecycle tracking | Proactively connected fragmented data and reduced investigation time from 45 to 3 minutes |
 
 ## Final preparation checklist
 
